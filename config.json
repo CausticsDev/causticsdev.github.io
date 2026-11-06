@@ -1,0 +1,25 @@
+{
+  "site": {
+    "name": "Caustics",
+    "tagline": "Shimmering water, rippling light and deep ocean color for the Rust-powered Minecraft rewrite.",
+    "version": "1.10.1"
+  },
+  "github": {
+    "repo": "",
+    "asset": "Caustics.zip",
+    "autoLatest": true
+  },
+  "links": {
+    "download": "downloads/Caustics.zip",
+    "paypal": "https://www.paypal.me/tinyplayerss",
+    "horizon": "",
+    "changelog": ""
+  },
+  "socials": [
+    { "name": "GitHub",  "icon": "fa-brands fa-github",  "url": "https://github.com/your-username" },
+    { "name": "Discord", "icon": "fa-brands fa-discord", "url": "" },
+    { "name": "YouTube", "icon": "fa-brands fa-youtube", "url": "" },
+    { "name": "X",       "icon": "fa-brands fa-x-twitter", "url": "" },
+    { "name": "Reddit",  "icon": "fa-brands fa-reddit-alien", "url": "" }
+  ]
+}

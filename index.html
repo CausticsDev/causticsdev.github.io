@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caustics – Shaders for the Horizon Project</title>
+  <meta name="description" content="Caustics: a water-and-light shader pack made for the Horizon Project, the Rust Minecraft rewrite.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Floating nav -->
+  <header class="nav" id="nav">
+    <a href="#home" class="brand"><i class="fa-solid fa-droplet"></i> <span data-text="site.name">Caustics</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    <nav id="navLinks">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#download">Download</a>
+      <a href="#donate" class="nav-cta"><i class="fa-brands fa-paypal"></i> Donate</a>
+    </nav>
+  </header>
+
+  <!-- HERO: text left, slideshow right -->
+  <section class="hero-wrap" id="home">
+   <div class="hero">
+    <div class="hero-text">
+      <span class="eyebrow"><i class="fa-solid fa-gem"></i> Made for the Horizon Project</span>
+      <h1>Caustics</h1>
+      <p class="tagline" data-text="site.tagline">Shimmering water, rippling light and deep ocean color for the Rust-powered Minecraft rewrite.</p>
+      <div class="hero-buttons">
+        <a href="#download" class="btn btn-primary"><i class="fa-solid fa-download"></i> Download</a>
+        <a href="#gallery" class="btn btn-ghost"><i class="fa-regular fa-images"></i> Gallery</a>
+      </div>
+      <p class="meta">
+        <span data-tpl="v{{site.version}}">v1.0</span>
+        <span class="dot"></span>
+        <span><i class="fa-brands fa-rust"></i> Rust Minecraft rewrite</span>
+      </p>
+    </div>
+
+    <div class="frame" id="slideshow">
+      <div class="slides" id="slides"></div>
+      <button class="slide-btn prev" id="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="slide-btn next" id="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="dots" id="dots"></div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap split">
+      <div>
+        <span class="label">About</span>
+        <h2>Light, as it moves through water.</h2>
+        <p class="lead">Caustics is a shader pack built around the way sunlight bends and settles beneath the surface.
+          Clean water, soft lighting and a calm, natural look.</p>
+      </div>
+      <aside class="horizon-card">
+        <i class="fa-solid fa-microchip"></i>
+        <h3>Made for the Horizon Project</h3>
+        <p>These shaders are made specifically for Horizon, the Minecraft rewrite written in Rust.
+          They are not intended for vanilla Minecraft or other launchers.</p>
+        <p class="horizon-link" data-hide-if-empty="links.horizon">
+          <a data-href="links.horizon" target="_blank" rel="noopener">Visit the Horizon Project <i class="fa-solid fa-arrow-right"></i></a>
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <span class="label">Features</span>
+      <h2>What's inside</h2>
+      <div class="features">
+        <div class="feature"><i class="fa-solid fa-water"></i><h3>Water</h3><p>Clear, reflective water with animated waves and depth.</p></div>
+        <div class="feature"><i class="fa-solid fa-sun"></i><h3>Caustic light</h3><p>Soft light patterns on the sea floor and nearby blocks.</p></div>
+        <div class="feature"><i class="fa-solid fa-cloud-sun"></i><h3>Atmosphere</h3><p>Natural skies, sunsets and gentle volumetric-style fog.</p></div>
+        <div class="feature"><i class="fa-solid fa-lightbulb"></i><h3>Lighting</h3><p>Soft shadows, ambient light and warm torchlight.</p></div>
+        <div class="feature"><i class="fa-solid fa-sliders"></i><h3>Customizable</h3><p>Tweak the look to match your style and your GPU.</p></div>
+        <div class="feature"><i class="fa-solid fa-bolt"></i><h3>Optimized</h3><p>Built to take advantage of Horizon's fast Rust engine.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <span class="label">Gallery</span>
+          <h2>See it in action</h2>
+        </div>
+        <p class="sub">Click any screenshot to view it full size.</p>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>
+        <i class="fa-regular fa-image"></i>
+        No images listed yet. Put your screenshots in <code>DEMO/</code> and run
+        <code>python tools/generate-images.py</code> (or edit <code>assets/js/images.js</code> by hand).
+      </p>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD + DONATE -->
+  <section class="section" id="get">
+    <div class="wrap cards">
+      <article class="card" id="download">
+        <span class="label">Download</span>
+        <h2>Get <span data-text="site.name">Caustics</span></h2>
+        <p class="card-sub" data-tpl="Version {{site.version}} &middot; Requires the Horizon Project">Version 1.0 &middot; Requires the Horizon Project</p>
+        <a data-href="links.download" href="downloads/Caustics.zip" class="btn btn-primary btn-lg" download>
+          <i class="fa-solid fa-download"></i> Download
+        </a>
+        <ol class="steps">
+          <li><span>1</span> Download the ZIP file.</li>
+          <li><span>2</span> Place it in Horizon's shader packs folder.</li>
+          <li><span>3</span> Select Caustics in the settings and enjoy.</li>
+        </ol>
+        <p class="card-link" data-hide-if-empty="links.changelog">
+          <a data-href="links.changelog" target="_blank" rel="noopener"><i class="fa-solid fa-clock-rotate-left"></i> Changelog</a>
+        </p>
+      </article>
+
+      <article class="card" id="donate">
+        <span class="label">Support</span>
+        <h2>Support the project</h2>
+        <p class="card-sub">Caustics is free. If you enjoy it, a donation helps keep development going.</p>
+        <a data-href="links.paypal" href="https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID" class="btn btn-paypal btn-lg" target="_blank" rel="noopener">
+          <i class="fa-brands fa-paypal"></i> Donate with PayPal
+        </a>
+        <div class="socials" data-socials></div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap foot">
+      <p>&copy; <span id="year"></span> <span data-text="site.name">Caustics</span> &middot;
+        <span data-tpl="v{{site.version}}">v1.0</span></p>
+      <p class="small">Made for the Horizon Project, the <i class="fa-brands fa-rust"></i> Rust Minecraft rewrite. Not affiliated with Mojang or Microsoft.</p>
+      <div class="socials" data-socials></div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="slide-btn prev" id="lbPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <img id="lbImg" alt="">
+    <button class="slide-btn next" id="lbNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <script src="assets/js/config-engine.js"></script>
+  <script src="assets/js/images.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
